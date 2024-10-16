@@ -209,11 +209,12 @@ h1 {
     justify-content: center;
     margin-right: 15px;
     transition: transform 0.3s ease;
+    font-size: 1.5em; /* Увеличение размера иконки */
 }
 
-.icon-svg, .icon-img {
-    width: 28px;
-    height: 28px;
+.icon-svg, .icon-img, .icon-wrapper i {
+    width: 50px;  /* Увеличение размера иконки */
+    height: 50px; /* Увеличение размера иконки */
     object-fit: contain;
     transition: transform 0.3s ease;
 }
@@ -297,6 +298,8 @@ h1 {
     overflow: hidden;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 1.5em; /* Увеличение размера иконки */
 }
 
 .send-btn:hover {
@@ -305,10 +308,36 @@ h1 {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-.send-btn .icon-svg, .send-btn .icon-img {
-    width: 32px; 
-    height: 32px; 
-    transition: transform 0.5s ease;
+.send-btn i {
+    color: #fff; /* Белый цвет иконок */
+}
+
+#send-whatsapp i {
+    color: #25D366; /* Зеленый цвет WhatsApp */
+}
+
+#send-telegram i {
+    color: #0088cc; /* Синий цвет Telegram */
+}
+
+#send-email i {
+    color: #e74c3c; /* Красный цвет Email */
+}
+
+/* 1. Сделать иконки WhatsApp и Telegram в верхних контактах белыми */
+.contact-whatsapp .icon-img,
+.contact-telegram .icon-img {
+    filter: brightness(0) invert(1);
+}
+
+/* 2. Сделать иконку Email после ссылки на веб-сайт черной */
+.contact-email .icon-img {
+    filter: brightness(0);
+}
+
+/* 3. Сделать иконку Email после поля ввода сообщения белой */
+#send-email .icon-img {
+    filter: brightness(0) invert(1);
 }
 
 .popup {
@@ -392,9 +421,9 @@ h1 {
         margin-right: 12px;
     }
 
-    .icon-svg, .icon-img {
+    .icon-svg, .icon-img, .icon-wrapper i {
         width: 24px;
-        height: 24px;
+        height: 24px; 
     }
 
     .message-form textarea {
@@ -410,9 +439,8 @@ h1 {
         padding: 12px 18px;
     }
 
-    .send-btn .icon-svg, .send-btn .icon-img {
-        width: 24px;
-        height: 24px; 
+    .send-btn i {
+        font-size: 1.2em; 
     }
 }
 
@@ -442,8 +470,7 @@ h1 {
         padding: 13px 19px;
     }
 
-    .send-btn .icon-svg, .send-btn .icon-img {
-        width: 28px;
-        height: 28px; 
+    .send-btn i {
+        font-size: 1.3em; 
     }
 }
